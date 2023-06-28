@@ -7,14 +7,14 @@ package paquete1;
 
 import java.util.ArrayList;
 import paquete2.*;
-
+import paquete2.Persona;
 public class Ejecutor2 {
 
     public static void main(String[] args) {
 
         ArrayList<PasajeUrbano> pasajes = new ArrayList<>();
         String[] nombres = {"Austin", "Monique", "Glen", "Richard", "Patrick"};
-        String[] apellidos = {"Martinez", "Lyons", "Kim", "Tate", "Lee"};
+        String[] cedula = {"Martinez", "Lyons", "Kim", "Tate", "Lee"};
         int[] edad = {9, 70, 35, 23, 10};
         double pasajeFijo = 0.4;
         
@@ -38,6 +38,33 @@ public class Ejecutor2 {
         */
         // inicio de solución
         
+        for (int i = 0 ; i < nombres.length; i++) {
+            if (edad[i] >= 0 && edad[i]<= 18) {
+                PasajeMenorEdad pasajeE = new PasajeMenorEdad(pasajeFijo);
+                Persona persona = new Persona(nombres[i],cedula[i], edad[i]);
+                pasajeE.establecerPersona(persona); 
+                pasajes.add(pasajeE);
+                
+            }
+            if (edad[i] > 18 && edad[i]<= 25) {
+                PasajeMenorEdad pasajeE = new PasajeMenorEdad(pasajeFijo);
+                Persona persona = new Persona(nombres[i],cedula[i], edad[i]);
+                pasajeE.establecerPersona(persona); 
+                pasajes.add(pasajeE);
+            }
+            if (edad[i] > 25 && edad[i]<= 65) {
+                PasajeMenorEdad pasajeE = new PasajeMenorEdad(pasajeFijo);
+                Persona persona = new Persona(nombres[i],cedula[i], edad[i]);
+                pasajeE.establecerPersona(persona); 
+                pasajes.add(pasajeE);
+            }
+            if (edad[i] > 65) {
+                PasajeMenorEdad pasajeE = new PasajeMenorEdad(pasajeFijo);
+                Persona persona = new Persona(nombres[i],cedula[i], edad[i]);
+                pasajeE.establecerPersona(persona); 
+                pasajes.add(pasajeE);
+            }
+        }
         
         // fin  de solución
         
